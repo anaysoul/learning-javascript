@@ -1,5 +1,6 @@
 const defaultResult = 0;
 let currentResult = defaultResult;
+let logEntries = [];
 
 /* 
 function definitions
@@ -18,6 +19,8 @@ function add() {
   const initialResult = currentResult;
   currentResult += enteredNumber;
   createAndWriteLog('+', initialResult, enteredNumber);
+  logEntries.push(enteredNumber);
+  console.log(logEntries[1]);
 }
 
 function subtract() {
