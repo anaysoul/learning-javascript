@@ -26,6 +26,7 @@ function add() {
     result: currentResult,
   };
   logEntries.push(logEntry);
+  console.log(logEntry.operation); // allows to access data in object
   console.log(logEntries);
 }
 
