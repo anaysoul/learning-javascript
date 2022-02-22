@@ -20,6 +20,7 @@ function divide(num1, num2) {
 }
 
 currentResult = add(1, 2);
+
 // template literal
 let calculationDescription = `(${defaultResult} + 10) * 3 / 2 - 1`;
 
