@@ -218,6 +218,16 @@ function printLogHandler() {
   for (let i = 0; i < 3; i++) {
     console.log('------------');
   }
+  let j = 3;
+  do {
+    console.log(j);
+    j++;
+  } while (j < 3);
+  //   let j = 0;
+  //   while (j < 3) {
+  //     console.log('------------');
+  //     j++;
+  //   }
 
   //   for (let i = 0; i < battleLog.length; i++) {
   //     console.log(battleLog[i]);
@@ -227,7 +237,7 @@ function printLogHandler() {
   for (const logEntry of battleLog) {
     console.log(`#${i}`);
     for (const key in logEntry) {
-      console.log(`${key} => ${logEntry[key])}`);
+      console.log(`${key} => ${logEntry[key]}`);
     }
     i++;
   }
