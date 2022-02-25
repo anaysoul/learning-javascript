@@ -88,9 +88,13 @@ startGameBtn.addEventListener('click', () => {
 // not related to the game
 //es6 - rest operator
 const sumUp = (a, b, ...numbers) => {
+  const validateNumber = (number) => {
+    return isNaN(number) ? 0 : number;
+  };
+
   let sum = 0;
   for (const num of numbers) {
-    sum += num;
+    sum += validateNumber(num);
   }
   return sum;
 };
@@ -104,5 +108,5 @@ const subtractUp = function () {
   return sum;
 };
 
-console.log(sumUp(2, 4, 5, 23, 12, 46, 23, 233));
+console.log(sumUp(2, 4, 5, 23, 'sdfsa', 46, 23, 233));
 console.log(subtractUp(2, 4, 5, 23, 12, 46, 12, 345, 562, 234));
