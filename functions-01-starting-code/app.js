@@ -1,8 +1,9 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
-function startGame() {
+// function expression with anonymous function
+const start = function () {
   console.log('Game is starting...');
-}
+};
 
 // const person = {
 //   name: 'Max',
@@ -14,6 +15,6 @@ function startGame() {
 
 // person.greet();
 
-console.dir(startGame);
+// console.dir(startGame);
 
-startGameBtn.addEventListener('click', startGame);
+startGameBtn.addEventListener('click', start);
