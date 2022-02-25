@@ -219,9 +219,16 @@ function printLogHandler() {
   for (let i = 0; i < 3; i++) {
     console.log('------------');
   }
-  let j = 3;
-  do {
-    console.log(j);
+  let j = 0;
+  outerWhile: do {
+    console.log('outer ' + j);
+    innerFor: for (let k = 0; k < 3; k++) {
+      if (k === 2) {
+        break outerWhile;
+        // continue outerWhile; DANGEROUS! => INFINITE LOOP!
+      }
+      console.log('inner ' + k);
+    }
     j++;
   } while (j < 3);
   //   let j = 0;
