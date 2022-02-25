@@ -56,6 +56,7 @@ const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) =>
 //     return RESULT_COMPUTER_WINS;
 //   }
 
+// callback function
 startGameBtn.addEventListener('click', () => {
   if (gameIsRunning) {
     return;
@@ -87,7 +88,7 @@ startGameBtn.addEventListener('click', () => {
 
 // not related to the game
 //es6 - rest operator
-const sumUp = (a, b, ...numbers) => {
+const sumUp = (resultHandler, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
@@ -96,7 +97,7 @@ const sumUp = (a, b, ...numbers) => {
   for (const num of numbers) {
     sum += validateNumber(num);
   }
-  return sum;
+  resultHandler(sum);
 };
 
 const subtractUp = function () {
@@ -108,5 +109,9 @@ const subtractUp = function () {
   return sum;
 };
 
-console.log(sumUp(2, 4, 5, 23, 'sdfsa', 46, 23, 233));
+const showResult = (result) => {
+  alert('The result after adding all the numbers is ' + result);
+};
+
+sumUp(showResult, 2, 4, 5, 23, 'sdfsa', 46, 23, 233);
 console.log(subtractUp(2, 4, 5, 23, 12, 46, 12, 345, 562, 234));
