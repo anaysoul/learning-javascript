@@ -7,6 +7,7 @@ function startGame() {
 const person = {
   name: 'Max',
   greet: function greet() {
+    //methods
     console.log('Hello there!');
   },
 };
