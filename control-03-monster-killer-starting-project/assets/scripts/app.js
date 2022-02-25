@@ -22,7 +22,18 @@ function getMaxLifeValues() {
     throw { message: 'Invalid user input, not a number!' };
   }
 }
-let chosenMaxLife = getMaxLifeValues();
+let chosenMaxLife;
+
+try {
+  chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+  console.log(error);
+  chosenMaxLife = 100;
+  alert('You entered not a number, max life set to 100!');
+}
+// } finally {
+//   in cases to resolve error thrown in catch; used for clean-up workaround.
+// }
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
